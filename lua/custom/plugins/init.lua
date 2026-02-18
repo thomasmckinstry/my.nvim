@@ -14,4 +14,12 @@ require('lazy').setup {
   end,
 }
 
+require('lazy').setup {
+  'nvim-tree/nvim-tree',
+  lazy = false,
+  config = function()
+    require('nvim-tree').setup()
+  end,
+}
+
 return {}
