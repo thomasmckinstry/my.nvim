@@ -795,6 +795,7 @@ require('lazy').setup({
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_background = 'soft'
       vim.g.gruvbox_material_ui_contrast = 'high'
       vim.o.background = 'light'
       vim.cmd.colorscheme 'gruvbox-material'
@@ -864,7 +865,7 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
-      require('nvim-tree').setup()
+      require('nvim-tree').setup { view = { side = 'right' } }
     end,
   },
   {
@@ -962,4 +963,4 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 --
---
+require('nvim-tree.api').tree.open() -- open the nvim-tree file display by default
