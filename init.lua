@@ -584,7 +584,6 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
-        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -592,7 +591,6 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
         --
 
         lua_ls = {
@@ -963,4 +961,6 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 --
-require('nvim-tree.api').tree.open() -- open the nvim-tree file display by default
+-- require('nvim-tree.api').tree.open() -- open the nvim-tree file display by default
+vim.api.nvim_create_autocmd("VimEnter", { command = "NvimTreeOpen" })
+vim.api.nvim_create_autocmd("TabNewEntered", { command = "NvimTreeOpen" })
