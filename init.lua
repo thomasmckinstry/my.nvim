@@ -822,7 +822,6 @@ require('lazy').setup({
     end,
   }, ]]
   --
-
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
@@ -962,5 +961,6 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 --
 -- require('nvim-tree.api').tree.open() -- open the nvim-tree file display by default
-vim.api.nvim_create_autocmd("VimEnter", { command = "NvimTreeOpen" })
-vim.api.nvim_create_autocmd("TabNewEntered", { command = "NvimTreeOpen" })
+
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE' })
